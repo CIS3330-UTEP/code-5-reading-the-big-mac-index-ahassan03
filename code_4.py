@@ -22,7 +22,7 @@ def get_the_cheapest_big_mac_price_by_year(year):
     country_name = min_row["name"]
     country_code = min_row["iso_a3"]
     dollar_price = min_row["dollar_price"]
-    return f"{country_name}({country_code}): ${round(dollar_price, 1)}"
+    return f"{country_name}({country_code}): ${dollar_price:.2f}"
 
 def get_the_most_expensive_big_mac_price_by_year(year):
     df_filtered = df[df["year"] == year]
@@ -31,7 +31,7 @@ def get_the_most_expensive_big_mac_price_by_year(year):
     country_name = max_row["name"]
     country_code = max_row["iso_a3"]
     dollar_price = max_row["dollar_price"]
-    return f"{country_name}({country_code}): ${round(dollar_price, 1)}"
+    return f"{country_name}({country_code}): ${dollar_price:.2f}"
 
 if __name__ == "__main__":
     print("Price in Malaysia (MYS) in 2008:", get_big_mac_price_by_year(2008, "mys"))
